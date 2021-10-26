@@ -27,6 +27,10 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  textArea: {
+    type: Boolean,
+    default: false,
+  },
 });
 const emit = defineEmits(["update:modelValue"]);
 const emitText = (e) => {
@@ -37,6 +41,7 @@ const emitText = (e) => {
 
 <template>
   <input
+    v-if="!textArea"
     :type="type"
     :placeholder="placeholder"
     :disabled="disabled"
@@ -54,6 +59,24 @@ const emitText = (e) => {
       border border-greenPrimary
     "
   />
+  <textarea
+    v-else
+    :placeholder="placeholder"
+    :disabled="disabled"
+    :required="required"
+    @input="emitText"
+    class="
+      w-full
+      rounded-lg
+      px-4
+      py-3
+      placeholder-greenSemiDark
+      bg-green-100
+      text-greenSemiDark
+      dark:bg-green-800 dark:text-greenLight
+      border border-greenPrimary
+    "
+  ></textarea>
 </template>
 
 <style></style>

@@ -37,6 +37,7 @@ function openLink(link) {
         <Header class="mb-10" />
         <form @submit.prevent="handleSubmit">
           <input-field
+            type="tel"
             v-model="to"
             :required="true"
             placeholder="Please enter number with country code +916295000042"
@@ -45,6 +46,7 @@ function openLink(link) {
           <input-field
             v-model="message"
             :required="true"
+            :text-area="true"
             placeholder="Enter your message"
             class="mb-5"
           />
