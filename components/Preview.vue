@@ -39,27 +39,33 @@ defineProps({
       "
     >
       <div class="avatar rounded-full bg-greenPrimary h-8 w-8 mr-2"></div>
-      <div v-if="to" class="text-greenDark dark:text-greenLight">{{ to }}</div>
+      <transition name="slide-fade">
+        <div v-if="to" class="text-greenDark dark:text-greenLight">
+          {{ to }}
+        </div>
+      </transition>
     </div>
-    <div
-      v-if="message"
-      class="
-        bubble
-        absolute
-        bottom-20
-        right-8
-        py-5
-        px-4
-        rounded-lg rounded-tr-none
-        w-[200px]
-        bg-greenSemiDark
-        text-greenLight
-      "
-    >
-      <p class="w-full overflow-ellipsis overflow-hidden text-sm">
-        {{ message }}
-      </p>
-    </div>
+    <transition name="slide-fade">
+      <div
+        v-if="message"
+        class="
+          bubble
+          absolute
+          bottom-20
+          right-8
+          py-5
+          px-4
+          rounded-lg rounded-tr-none
+          w-[200px]
+          bg-greenSemiDark
+          text-greenLight
+        "
+      >
+        <p class="w-full overflow-ellipsis overflow-hidden text-sm">
+          {{ message }}
+        </p>
+      </div>
+    </transition>
     <div
       class="
         preview__footer
@@ -146,5 +152,18 @@ defineProps({
   border-bottom: 5px solid transparent;
   right: -10px;
   top: 0px;
+}
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s ease-in;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>
