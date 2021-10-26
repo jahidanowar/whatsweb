@@ -18,40 +18,42 @@ function openLink(link) {
 
 <template>
   <Title>WhatsWeb - Send whatsapp message without storing contact</Title>
-  <div
-    class="
-      container
-      mx-auto
-      md:h-screen
-      flex flex-wrap
-      md:flex-nowrap
-      justify-between
-      gap-10
-      items-center
-      p-5
-      md:p-0
-    "
-  >
-    <div class="w-full md:w-1/2">
-      <Header class="mb-10" />
-      <form @submit.prevent="handleSubmit">
-        <input-field
-          v-model="to"
-          :required="true"
-          placeholder="Please enter number with country code +916295000042"
-          class="mb-5"
-        />
-        <input-field
-          v-model="message"
-          :required="true"
-          placeholder="Enter your message"
-          class="mb-5"
-        />
-        <btn label="Send Message" />
-      </form>
-    </div>
-    <div class="w-full md:w-1/2">
-      <preview :to="to" :message="message" />
+  <div class="body">
+    <div
+      class="
+        container
+        mx-auto
+        md:h-screen
+        flex flex-wrap
+        md:flex-nowrap
+        justify-between
+        gap-10
+        items-center
+        p-5
+        md:p-0
+      "
+    >
+      <div class="w-full md:w-1/2">
+        <Header class="mb-10" />
+        <form @submit.prevent="handleSubmit">
+          <input-field
+            v-model="to"
+            :required="true"
+            placeholder="Please enter number with country code +916295000042"
+            class="mb-5"
+          />
+          <input-field
+            v-model="message"
+            :required="true"
+            placeholder="Enter your message"
+            class="mb-5"
+          />
+          <btn label="Send Message" />
+        </form>
+      </div>
+      <div class="w-full md:w-1/2">
+        <preview :to="to" :message="message" />
+      </div>
     </div>
   </div>
 </template>
@@ -60,7 +62,7 @@ function openLink(link) {
 .container {
   @apply lg:max-w-6xl;
 }
-body {
+.body {
   @apply bg-greenLight dark:bg-greenDark;
 }
 </style>
