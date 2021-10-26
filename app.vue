@@ -23,12 +23,16 @@ function openLink(link) {
       class="
         container
         mx-auto
+        min-h-screen
         md:h-screen
         flex flex-wrap
         md:flex-nowrap
-        justify-between
-        gap-10
+        flex-col-reverse
+        md:flex-row
+        justify-around
+        md:justify-between
         items-center
+        gap-10
         p-5
         md:p-0
       "
@@ -66,5 +70,6 @@ function openLink(link) {
 }
 .body {
   @apply bg-greenLight dark:bg-greenDark;
+  min-height: 100vh;
 }
 </style>

@@ -19,8 +19,9 @@ defineProps({
       flex flex-col
       justify-between
       relative
-      w-[340px]
-      h-[600px]
+      w-[250px]
+      h-[300px]
+      md:w-[340px] md:h-[600px]
       rounded-5xl
       border-[10px] border-greenPrimary
       bg-green-100
@@ -52,7 +53,8 @@ defineProps({
           bubble
           absolute
           bottom-20
-          right-8
+          right-5
+          md:right-8
           py-5
           px-4
           rounded-lg rounded-tr-none
