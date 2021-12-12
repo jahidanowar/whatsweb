@@ -17,7 +17,15 @@ function openLink(link) {
 </script>
 
 <template>
-  <Title>WhatsWeb - Send whatsapp message without storing contact</Title>
+  <Title>WhatsWeb - Send whatsapp message without saving contact number</Title>
+  <Meta
+    name="description"
+    content="Whatsweb, An open source web app allows you to Send Direct Whatsapp mesages without adding contact number."
+  ></Meta>
+  <Meta
+    name="google-site-verification"
+    content="gUpNFCYPMLoIvNqESBJumXb1DzCvpN0CPMkZ8bEWIvs"
+  />
   <div class="body">
     <div
       class="
@@ -37,7 +45,8 @@ function openLink(link) {
         md:p-0
       "
     >
-      <div class="w-full md:w-1/2">
+      <color-switcher />
+      <div class="w-full md:w-2/5">
         <Header class="mb-10" />
         <form @submit.prevent="handleSubmit">
           <input-field
@@ -57,7 +66,7 @@ function openLink(link) {
           <btn label="Send Message" />
         </form>
       </div>
-      <div class="w-full md:w-1/2">
+      <div class="w-full md:w-3/5">
         <preview :to="to" :message="message" />
       </div>
     </div>

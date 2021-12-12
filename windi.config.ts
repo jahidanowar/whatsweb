@@ -1,10 +1,10 @@
-import {defineConfig } from 'windicss/helpers'
+import { defineConfig } from 'windicss/helpers'
 
 export default defineConfig({
     darkMode: 'media',
     theme: {
-        extend:{
-            fontFamily:{
+        extend: {
+            fontFamily: {
                 sans: "Inter var, Inter, sans-serif",
             },
             colors: {

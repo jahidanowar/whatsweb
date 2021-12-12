@@ -9,7 +9,7 @@ const title = ref("Send WhatsApp message without saving contact number");
       <h1
         class="
           text-2xl
-          md:text-5xl
+          md:text-4xl
           text-center
           md:text-left
           text-greenDark
